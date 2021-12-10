@@ -4,7 +4,7 @@ const controller = {};
 
 controller.getProfesionales = async (_req, res) => {
   const profesionales = await Profesionales.find({
-    es_profesional: false,
+    es_profesional: true,
   });
 
   res.json(profesionales);
