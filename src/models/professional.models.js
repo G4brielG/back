@@ -28,10 +28,10 @@ const Profesionales = new Schema({
       require: true,
       unique: true,
     },
-  },
-  es_profesional: {
-    type: Boolean,
-    require: true,
+    es_profesional: {
+      type: Boolean,
+      require: true,
+    },
   },
 
   info_profesional: {
