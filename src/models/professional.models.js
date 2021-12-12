@@ -44,6 +44,9 @@ const Profesionales = new Schema({
     rubros: {
       type: Array,
     },
+    likes: {
+      type: Number,
+    },
   },
 
   info_lugar_trabajo: {
