@@ -11,6 +11,7 @@ const {
   createProfesional,
   updateProfesional,
   deleteProfesional,
+  likes,
 } = require("../controllers/professionals.controllers");
 const {
   post_middlewares_professional,
@@ -23,9 +24,18 @@ route.get("/", getProfesionales);
 route.get("/:id", getProfesional);
 
 // privadas // [validar_jwt, verificarActivo],
-route.post("/", [validar_jwt, post_middlewares_professional], createProfesional);
-route.put("/:id", [validar_jwt, update_middlewares_professional], updateProfesional);
+route.post(
+  "/",
+  [validar_jwt, post_middlewares_professional],
+  createProfesional
+);
+route.put(
+  "/:id",
+  [validar_jwt, update_middlewares_professional],
+  updateProfesional
+);
 // route.put("/password/:id", [validar_jwt, verificarActivo], updateProfesional);
 route.delete("/:id", [validar_jwt, verificarActivo], deleteProfesional);
+route.likes("/like/:id", likes);
 
 module.exports = route;

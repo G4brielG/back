@@ -98,4 +98,31 @@ controller.deleteProfesional = async (req, res) => {
   }
 };
 
+controller.likes = async (req, res) => {
+  const { id } = req.params;
+  const { like } = req.body;
+
+  const Profesional = await Profesionales.findById(id);
+
+  const { likes } = req.body;
+
+  if (like == false) {
+    try {
+      Profesional.info_profesional.likes -= 1;
+      const { info_profesional } = Profesional;
+      await Profesionales.findByIdAndUpdate(id, { info_profesional });
+    } catch (error) {
+      res.json({ msg: "Se restó un like" });
+    }
+  } else if (like == true) {
+    try {
+      Profesional.info_profesional.likes += 1;
+      const { info_profesional } = Profesional;
+      await Profesionales.findByIdAndUpdate(id, { info_profesional });
+    } catch (error) {
+      res.json({ msg: "Se sumó un like" });
+    }
+  }
+};
+
 module.exports = controller;
