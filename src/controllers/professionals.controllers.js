@@ -3,7 +3,8 @@ const Profesionales = require("../models/professional.models");
 const controller = {};
 
 controller.getProfesionales = async (_req, res) => {
-  const profesionales = await Profesionales.find({}).sort({ likes: -1 });
+  const { info_profesional } = Profesional;
+  const profesionales = await Profesionales.find({}).sort({ Profesional: -1 });
 
   res.json(profesionales);
 };
