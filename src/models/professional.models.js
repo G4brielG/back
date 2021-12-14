@@ -49,6 +49,10 @@ const Profesionales = new Schema({
     },
   },
 
+  likes: {
+    type: Number,
+  },
+
   info_lugar_trabajo: {
     dias_atencion: {
       type: String,
