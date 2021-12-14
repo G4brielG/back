@@ -36,6 +36,6 @@ route.put(
 );
 // route.put("/password/:id", [validar_jwt, verificarActivo], updateProfesional);
 route.delete("/:id", [validar_jwt, verificarActivo], deleteProfesional);
-route.likes("/like/:id", likes);
+route.post("/like/:id", likes);
 
 module.exports = route;
