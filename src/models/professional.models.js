@@ -36,13 +36,13 @@ const Profesionales = new Schema({
 
   info_profesional: {
     certificaciones: {
-      type: String,
+      type: Array,
     },
     img_certif: {
       type: Array,
     },
     rubros: {
-      type: String,
+      type: Array,
     },
     likes: {
       type: Number,
